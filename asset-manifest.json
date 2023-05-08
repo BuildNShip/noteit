@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/noteit/static/css/main.7bd82615.css",
+    "main.js": "/noteit/static/js/main.b3f4ae8f.js",
+    "index.html": "/noteit/index.html",
+    "main.7bd82615.css.map": "/noteit/static/css/main.7bd82615.css.map",
+    "main.b3f4ae8f.js.map": "/noteit/static/js/main.b3f4ae8f.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.7bd82615.css",
+    "static/js/main.b3f4ae8f.js"
+  ]
+}
