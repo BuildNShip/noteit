@@ -1,6 +1,6 @@
 {
   "name": "notes",
-  "homepage": "https://BuildNShip.github.io/noteit",
+  "homepage": "https://noteit.buildnship.in/",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
