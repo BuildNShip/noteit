@@ -1,6 +1,5 @@
-{
+{ "homepage": "https://noteit.buildnship.in",
   "name": "notes",
-  "homepage": "https://noteit.buildnship.in/",
   "version": "0.1.0",
   "private": true,
   "dependencies": {

@@ -3,9 +3,9 @@ import DropdownButton from 'react-bootstrap/DropdownButton';
 import Dropdown from "react-bootstrap/Dropdown";
 import React, { useState, useEffect } from "react";
 import { useRef } from "react";
+import "./Main.css";
 
-
-function Main({ activeNote, onUpdateNotes }) {
+const Main = ({ activeNote, onUpdateNotes }) => {
   const [textCase, setTextCase] = useState("titlecase");
   const [fontSize, setFontSize] = useState(14);
   const [copyStatus, setCopyStatus] = useState("copy");
@@ -179,4 +179,4 @@ function Main({ activeNote, onUpdateNotes }) {
   );
 }
 
-export default Main;
+export default Main
