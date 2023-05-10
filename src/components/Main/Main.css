@@ -101,7 +101,6 @@ textarea {
     resize: none;
     font-size: 16;
     background-color: #000;
-
     height: 73%;
     padding: 20px;
     position: relative;
@@ -112,7 +111,7 @@ textarea {
     letter-spacing: 0;
     line-height: 1.6em;
     text-align: start;
-    color: #ffffff70;
+    color: #ffffff;
     text-decoration: none;
     text-transform: none;
     margin: 3px 0;
