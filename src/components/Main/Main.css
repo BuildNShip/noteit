@@ -128,7 +128,7 @@ textarea {
     /* border-top: 0.5px solid #ffffff2d; */
     color: #ffffff70;
     font-style: normal;
-    height:5%;
+    height:25%;
     padding-left: 7px;
     padding-right: 7px;
     font-size: 15px;
@@ -171,5 +171,14 @@ textarea {
       margin-left: 14px;
       font-size: smaller;
     
+    }
+    textarea {
+        height:71.5%;
+    }
+    .fontsize {
+        width:45px;
+    }
+    .btn-copy {
+        margin-right: 3px;
     }
   }

@@ -1,6 +1,6 @@
 import React from 'react'
 import { useState, useEffect } from "react";
-import "./../App.css";
+import "./MainPage.css";
 import uuid from "react-uuid";
 import styles from "./Footer.css";
 import { FiCopy } from "react-icons/fi";
