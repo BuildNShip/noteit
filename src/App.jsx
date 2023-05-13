@@ -1,12 +1,12 @@
 import "./App.css";
 import MainPage from "./pages/MainPage";
+import React from 'react'
 
-function Page() {
+const Page = () => {
   return (
     <div>
       <MainPage />
     </div>
   )
 }
-
 export default Page;

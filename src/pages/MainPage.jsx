@@ -30,6 +30,8 @@ const MainPage = () => {
         };
 
         setNotes([newNote, ...notes]);
+        setActiveNote(newNote.id);
+        
     };
 
     const onDeleteNote = (idToDelete) => {

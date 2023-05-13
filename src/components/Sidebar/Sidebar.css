@@ -7,9 +7,10 @@
 
 .app-sidebar-header {
     display: flex;
+    display:flexbox;
     justify-content: space-between;
     height: 10%;
-    padding: 0 10px;
+    padding: 0 5px;
     background-color: #000;
     border-bottom: 0.5px solid #dddddd4d;
 
@@ -71,3 +72,14 @@
     color: #808080;
     font-size: 75%;
 }
+
+@media only screen and (max-width: 600px) {
+    .app-sidebar-header h2 {
+      margin-left: 14px;
+      font-size: medium;
+    
+    }
+    .app-sidebar-header button {
+      gap: 3px;
+    }
+  }

@@ -130,7 +130,7 @@ const Main = ({ activeNote, onUpdateNotes }) => {
                 id="menu-item" value="title"
                 onClick={() => handleTextCaseChange("titlecase")}
               >
-                Sentence
+                Title
               </Dropdown.Item>
             </Dropdown.Menu>
           

@@ -4,6 +4,7 @@
 
 .app-main-header {
     display: flex;
+    display: flexbox;
     justify-content: right;
     color: #ddd;
 }
@@ -35,12 +36,15 @@
     background-color: #3b3a3a0d;
     color: #ddd;
     width: 60px;
+    margin: 3px;
 
 
 }
 
 #drop-dwn {
     padding-left: 10px;
+    border-width: 2px;
+
 }
 
 .btn-copy {
@@ -90,6 +94,9 @@
     /* margin: 3px 0; */
 }
 
+#title {
+    color:rgb(194, 201, 194);
+}
 textarea {
     display: block;
     border: none;
@@ -101,7 +108,7 @@ textarea {
     resize: none;
     font-size: 16;
     background-color: #000;
-    height: 73%;
+    height: 74%;
     padding: 20px;
     position: relative;
     will-change: transform;
@@ -118,27 +125,29 @@ textarea {
 }
 
 .textarea-footer {
-    border-top: 0.5px solid #ffffff2d;
+    /* border-top: 0.5px solid #ffffff2d; */
     color: #ffffff70;
     font-style: normal;
-    height: 20%;
-    padding-top: 5px;
+    height:5%;
+    padding-left: 7px;
+    padding-right: 7px;
     font-size: 15px;
+    display: flexbox;
+    display: flex;
+    justify-content: space-between;
     font-weight: lighter;
     background-color: #000;
-
-
+    
 }
 
 .words {
     font-style: normal;
-    margin-left: 4%;
 }
 
 /* screen size adaption need to be done */
 .chars {
     font-style: normal;
-    margin-left: 75%;
+    
 
 }
 
@@ -156,3 +165,11 @@ textarea {
 #menu-item:hover {
     background-color: #000000;
 }
+
+@media only screen and (max-width: 600px) {
+    .app-main-header {
+      margin-left: 14px;
+      font-size: smaller;
+    
+    }
+  }
