@@ -179,6 +179,9 @@ textarea {
     .fontsize {
         width:45px;
     }
+    .textarea-footer {
+        margin-bottom: 10px;
+    }
     .btn-copy {
         margin-right: 3px;
     }
