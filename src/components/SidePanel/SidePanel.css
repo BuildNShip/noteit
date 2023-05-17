@@ -1,4 +1,7 @@
-.app-sidebar {
+.toggle-btn  {
+    background-color: #000;
+}
+.app-sidepanel {
     width: 30%;
     height: 100vh;
     border-right: 0.5px solid #e0d7d727;
@@ -72,17 +75,3 @@
     color: #808080;
     font-size: 75%;
 }
-
-@media only screen and (max-width: 600px) {
-    .app-sidebar{
-        display:none;
-    }
-    .app-sidebar-header h2 {
-      margin-left: 14px;
-      font-size: medium;
-    
-    }
-    .app-sidebar-header button {
-      gap: 3px;
-    }
-  }

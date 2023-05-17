@@ -1,9 +1,26 @@
-import "./Sidebar.css"
+import React,{ useState } from 'react'
 
-const Sidebar = ({ notes, onAddNote, onDeleteNote, activeNote, setActiveNote }) => {
-  const sortedNotes = notes.sort((a, b) => b.lastModified - a.lastModified);
+const SidePanel = ({ notes, onAddNote, onDeleteNote, activeNote, setActiveNote }) => {
+    const sortedNotes = notes.sort((a, b) => b.lastModified - a.lastModified);
+
+    const [isOpen, setIsOpen] = useState(true);
+
+  const toggleNavbar = () => {
+    setIsOpen(!isOpen);
+  };
+
+
   return (
-      <div className="app-sidebar">
+    <div>
+    <div className="toggle-btn">
+    <button className={`navbar-toggle ${isOpen ? 'open' : ''}`} onClick={toggleNavbar}>
+    <i class="fa fa-bars" aria-hidden="true"></i>
+  </button>
+  </div>
+    <div className="app-sidepanel">
+
+      {isOpen && (
+      <nav className="navbar-items">
       <div className="app-sidebar-header">
         <h2 className="app-logo pt-3">NOTEit</h2>
         <button className="fa fa-plus" onClick={onAddNote}></button>
@@ -32,11 +49,16 @@ const Sidebar = ({ notes, onAddNote, onDeleteNote, activeNote, setActiveNote }) 
                 hour12: true,
               })}
             </small>
-          </div>
-        ))}
+       
       </div>
+        ))}
+        </div>
+         </nav>
+      )}
+      
     </div>
-  );
-};
+    </div>
+  )
+}
 
-export default Sidebar;
+export default SidePanel;

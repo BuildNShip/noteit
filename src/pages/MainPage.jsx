@@ -8,6 +8,8 @@ import { FaInstagram, FaTwitter, FaGithub, FaTelegram } from "react-icons/fa";
 import Sidebar from "../components/Sidebar/Sidebar";
 import BuildNShip from "../assets/BuildNShip.png";
 import Main from "../components/Main/Main";
+import SidePanel from "../components/SidePanel/SidePanel";
+
 
 const MainPage = () => {
     const [notes, setNotes] = useState(
@@ -52,16 +54,24 @@ const MainPage = () => {
         setNotes(updatedNotes);
     };
 
+    const isMobile = window.innerWidth <= 900;
+
     return (
         <div className="App">
-            <Sidebar
+            {!isMobile && <Sidebar
                 notes={notes}
                 onAddNote={onAddNote}
                 onDeleteNote={onDeleteNote}
                 activeNote={activeNote}
                 setActiveNote={setActiveNote}
-            />
-
+            />}
+            {isMobile && <SidePanel
+                notes={notes}
+                onAddNote={onAddNote}
+                onDeleteNote={onDeleteNote}
+                activeNote={activeNote}
+                setActiveNote={setActiveNote}
+            />}
             <Main activeNote={getActiveNote()} onUpdateNotes={onUpdateNotes} />
 
             <div className="footer">
