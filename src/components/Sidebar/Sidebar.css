@@ -75,7 +75,7 @@
 
 @media only screen and (max-width: 600px) {
     .app-sidebar{
-        display:none;
+        width:40%;
     }
     .app-sidebar-header h2 {
       margin-left: 14px;

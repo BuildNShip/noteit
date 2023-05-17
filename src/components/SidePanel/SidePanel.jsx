@@ -1,4 +1,5 @@
-import React,{ useState } from 'react'
+import React,{ useState } from 'react';
+import "./SidePanel.css"
 
 const SidePanel = ({ notes, onAddNote, onDeleteNote, activeNote, setActiveNote }) => {
     const sortedNotes = notes.sort((a, b) => b.lastModified - a.lastModified);
@@ -11,14 +12,13 @@ const SidePanel = ({ notes, onAddNote, onDeleteNote, activeNote, setActiveNote }
 
 
   return (
-    <div>
-    <div className="toggle-btn">
+    <div className='sidepanel'>
+    <div className="toggle-btn ">
     <button className={`navbar-toggle ${isOpen ? 'open' : ''}`} onClick={toggleNavbar}>
-    <i class="fa fa-bars" aria-hidden="true"></i>
+    <h1><i class="fa fa-bars" aria-hidden="true"></i></h1>
   </button>
   </div>
     <div className="app-sidepanel">
-
       {isOpen && (
       <nav className="navbar-items">
       <div className="app-sidebar-header">
@@ -29,7 +29,7 @@ const SidePanel = ({ notes, onAddNote, onDeleteNote, activeNote, setActiveNote }
         {sortedNotes.map((note) => (
           <div
             className={`app-sidebar-note ${note.id === activeNote && "active"}`}
-            onClick={() => setActiveNote(note.id)}
+            onClick={() => {setActiveNote(note.id); toggleNavbar();}}
           >
             <div className="sidebar-note-title">
               {note.title}
