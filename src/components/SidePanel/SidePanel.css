@@ -1,12 +1,12 @@
-.toggle-btn  {
-    background-color: #000000f6;
-    height: 45px;
+.app-sidebar {
+    width:600px;
 }
 
-.navbar-toggle{
-    transition: all 0.3s ease; /* Transition with slower ease */
+.navbar-toggle {
+    transition: all 0.3s ease;
+    /* Transition with slower ease */
 }
 
 i {
-    height:60px;
+    height: 60px;
 }

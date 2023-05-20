@@ -3,14 +3,16 @@ import DropdownButton from 'react-bootstrap/DropdownButton';
 import Dropdown from "react-bootstrap/Dropdown";
 import React, { useState, useEffect } from "react";
 import { useRef } from "react";
+import SidePanel from "../SidePanel/SidePanel";
 import "./Main.css";
 
-const Main = ({ activeNote, onUpdateNotes }) => {
+const Main = ({ activeNote, onUpdateNotes ,onAddNote ,toggleNavbar, isOpen}) => {
   const [textCase, setTextCase] = useState("titlecase");
   const [fontSize, setFontSize] = useState(14);
   const [copyStatus, setCopyStatus] = useState("copy");
 
   const content = useRef(null);
+  const isMobile = window.innerWidth <= 900;
 
   const toTitleCase = () => {
     let input = activeNote.body;
@@ -68,12 +70,19 @@ const Main = ({ activeNote, onUpdateNotes }) => {
         lastModified: Date.now(),
       });
     }
+    
   };
 
   if (!activeNote) return <div className="no-active-note">No Selected Notes </div> ;
   return (
     <div className="app-main">
       <div className="app-main-note-edit">
+        {isMobile && <div className="toggle-btn ">
+          <button className={`navbar-toggle ${isOpen ? 'open' : ''}`} onClick={toggleNavbar}>
+            <h1><i class="fa fa-bars" aria-hidden="true"></i></h1>
+          </button>
+          <button className="add-btn fa fa-plus" onClick={onAddNote}></button> 
+        </div>}
         <input
           type="text"
           className="main-edit-input"

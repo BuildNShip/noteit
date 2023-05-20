@@ -21,6 +21,12 @@ const MainPage = () => {
         localStorage.setItem("notes", JSON.stringify(notes));
     }, [notes]);
 
+    const [isOpen, setIsOpen] = useState(true);
+
+    const toggleNavbar = () => {
+      setIsOpen(!isOpen);
+    };
+
     const onAddNote = () => {
         const newNote = {
             id: uuid(),
@@ -38,6 +44,7 @@ const MainPage = () => {
 
     const onDeleteNote = (idToDelete) => {
         setNotes(notes.filter((note) => note.id !== idToDelete));
+
     };
 
     const getActiveNote = () => {
@@ -56,6 +63,8 @@ const MainPage = () => {
 
     const isMobile = window.innerWidth <= 900;
 
+
+
     return (
         <div className="App">
             {!isMobile && <Sidebar
@@ -71,8 +80,17 @@ const MainPage = () => {
                 onDeleteNote={onDeleteNote}
                 activeNote={activeNote}
                 setActiveNote={setActiveNote}
+                toggleNavbar={toggleNavbar}
+                isOpen={isOpen}
+                
+
             />}
-            <Main activeNote={getActiveNote()} onUpdateNotes={onUpdateNotes} />
+            <Main activeNote={getActiveNote()}
+             onUpdateNotes={onUpdateNotes} 
+             onAddNote={onAddNote}
+             toggleNavbar={toggleNavbar}
+             isOpen={isOpen} 
+             setIsOpen={setIsOpen}/>
 
             <div className="footer">
                 <a href="https://buildnship.in/">
