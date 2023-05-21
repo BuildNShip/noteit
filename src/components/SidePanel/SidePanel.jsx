@@ -14,6 +14,7 @@ const SidePanel = ({ notes, onAddNote, onDeleteNote, activeNote, setActiveNote, 
             <div className="app-sidebar-header">
               <h2 className="app-logo pt-3">NOTEit</h2>
               <button className="fa fa-plus" onClick={onAddNote}></button>
+              {/* <button class="fa fa-times" aria-hidden="true" onClick={toggleNavbar}></button> */}
             </div>
             <div className="app-sidebar-notes">
               {sortedNotes.map((note) => (

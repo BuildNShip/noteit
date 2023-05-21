@@ -104,7 +104,7 @@ const Main = ({ activeNote, onUpdateNotes ,onAddNote ,toggleNavbar, isOpen}) => 
             className="fontsize"
             type="number"
             onChange={(e) => handleFontSizeChange(e.target.value)}
-            value={fontSize}
+            value={activeNote.fontSize}
           />
 
           {/* dropdown menu-------------------------------------- */}

@@ -10,3 +10,9 @@
 i {
     height: 60px;
 }
+
+@media only screen and (max-width: 900px) {
+    .sidepanel {
+        border-right:0.5px solid #ffffff2d ;
+    }  
+}
