@@ -1,7 +1,9 @@
 .app-sidebar {
     width:600px;
 }
-
+.navbar-items{
+    width:160px;
+}
 .navbar-toggle {
     transition: all 0.3s ease;
     /* Transition with slower ease */
@@ -15,4 +17,7 @@ i {
     .sidepanel {
         border-right:0.5px solid #ffffff2d ;
     }  
+    .app-sidebar {
+        width:900px;
+    }
 }
