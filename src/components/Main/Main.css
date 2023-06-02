@@ -73,7 +73,7 @@
     margin:3px 30px 3px 0px;
     border: none;
     border-radius: 0px 10px 10px 0px;
-    background-color:#dfc13c ;
+    background-color:#f3cc41; 
 }
 
 #btn-drop {
@@ -82,7 +82,7 @@
     font-weight:bolder ;
     margin:3px 0px 3px 0px;
     border-radius: 10px 0px 0px 10px;
-    background-color:#dfc13c ;
+    background-color:#f3cc41; 
 
 }
 #btn-drop:hover {
@@ -275,6 +275,6 @@ textarea {
 
 @media (max-width:720px) {
     .textarea-footer {
-        margin-bottom: 20px;
+        margin-bottom: 40px;
     }
 }
