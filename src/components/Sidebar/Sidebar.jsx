@@ -5,8 +5,8 @@ const Sidebar = ({ notes, onAddNote, onDeleteNote, activeNote, setActiveNote }) 
   return (
       <div className="app-sidebar">
       <div className="app-sidebar-header">
-        <h2 className="app-logo pt-3">NOTEit</h2>
-        <button className="fa fa-plus" onClick={onAddNote}></button>
+        <h2 className="app-logo">NOTEit</h2>
+       <button className="fa fa-plus" onClick={onAddNote}></button>
       </div>
       <div className="app-sidebar-notes">
         {sortedNotes.map((note) => (

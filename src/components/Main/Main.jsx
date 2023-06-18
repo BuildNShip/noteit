@@ -53,11 +53,11 @@ const Main = ({ activeNote, onUpdateNotes ,onAddNote ,toggleNavbar, isOpen}) => 
     if (caseType === "titlecase") {
       caseType = "none";
       setTextCase(caseType);
-      console.log(content.current.id, content.value);
-      content.value = toTitleCase(activeNote.body);
+      //console.log(content.current.id, content.value);
+      content.current.value = toTitleCase(activeNote.body);
       onUpdateNotes({
         ...activeNote,
-        body: content.value,
+        body: content.current.value,
         textCase: caseType,
         lastModified: Date.now(),
       });
@@ -77,12 +77,12 @@ const Main = ({ activeNote, onUpdateNotes ,onAddNote ,toggleNavbar, isOpen}) => 
   return (
     <div className="app-main">
       <div className="app-main-note-edit">
-        {isMobile && <div className="toggle-btn ">
+        {isMobile && (<div className="toggle-btn ">
           <button className={`navbar-toggle ${isOpen ? 'open' : ''}`} onClick={toggleNavbar}>
             <h1><i class="fa fa-bars" aria-hidden="true"></i></h1>
           </button>
           <button className="add-btn fa fa-plus" onClick={onAddNote}></button> 
-        </div>}
+        </div>)}
         <input
           type="text"
           className="main-edit-input"

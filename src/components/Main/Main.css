@@ -54,7 +54,8 @@
 .fontsize {
     background-color: #3b3a3a0d;
     color: #ddd;
-    border-radius: 10px;
+    border-radius: 0px;
+   
     width: 60px;
     margin: 3px;
 
@@ -239,7 +240,7 @@ textarea {
     }
 
     .fontsize {
-        width: 45px;
+        width: 43px;
     }
 
     .textarea-footer {
@@ -276,5 +277,6 @@ textarea {
 @media (max-width:720px) {
     .textarea-footer {
         margin-bottom: 40px;
+        padding-bottom: 40px;
     }
 }

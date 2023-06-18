@@ -34,6 +34,13 @@
 
 }
 
+.app-logo {
+    padding:20px 30px 30px 0px;
+}
+.fa-plus{
+    padding-right:14px;
+}
+
 .fa-trash {
     display: none;
 }
@@ -81,6 +88,27 @@
       margin-left: 14px;
       font-size: medium;
     
+    }
+
+    .app-sidebar-note {
+        padding: 4px 4px 4px 14px;
+    }
+    .app-sidebar-header button {
+      gap: 3px;
+    }
+  }
+
+  @media only screen and (max-width: 900px) {
+    .app-sidebar{
+        width:40%;
+    }
+    .app-sidebar-header h2 {
+      margin-left: 14px;
+      font-size: medium;
+    
+    }
+    .app-logo{
+        padding-bottom:8px;
     }
     .app-sidebar-note {
         padding: 4px 4px 4px 14px;

@@ -23,7 +23,7 @@ const SidePanel = ({ notes, onAddNote, onDeleteNote, activeNote, setActiveNote, 
                   onClick={() => { setActiveNote(note.id); }}
                 >
                   <div className="sidebar-note-title">
-                    {note.title}
+                   <button class="note-title" onClick={toggleNavbar}>{note.title}</button>
                     <button
                       className="fa fa-trash "
                       onClick={() => {onDeleteNote(note.id)}}

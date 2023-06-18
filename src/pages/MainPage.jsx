@@ -15,8 +15,9 @@ const MainPage = () => {
     const [notes, setNotes] = useState(
         localStorage.notes ? JSON.parse(localStorage.notes) : []
     );
-
-    const [activeNote, setActiveNote] = useState(false);
+    
+    const latestModifiedNote = notes.length > 0 ? notes[0] : null;
+    const [activeNote, setActiveNote] = useState(latestModifiedNote ? latestModifiedNote.id : false);
     useEffect(() => {
         localStorage.setItem("notes", JSON.stringify(notes));
     }, [notes]);
@@ -49,6 +50,8 @@ const MainPage = () => {
 
     const getActiveNote = () => {
         return notes.find((note) => note.id === activeNote);
+
+
     };
 
     const onUpdateNotes = (updatedNote) => {
