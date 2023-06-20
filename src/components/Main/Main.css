@@ -228,7 +228,6 @@ textarea {
         font-style: normal;
         height: 25%;
         padding-left: 82%;
-        margin-right:14px;
         font-size: 15px;
         font-size: 15px;
         display: flexbox;
@@ -291,25 +290,10 @@ textarea {
     .no-active-note {
         width:600px;
     }
-    .add-btn{
-        padding-left: 80%;
-        margin-right: 0px;
-    }
-    .textarea-footer{
-        margin-bottom: 80px;
-    }
-    
 
 }
 
 @media (max-width:720px) {
-    .textarea-footer {
-        margin-bottom: 40px;
-        padding-bottom: 40px;
-    }
-}
-
-@media (min-width:400px) {
     .textarea-footer {
         margin-bottom: 40px;
         padding-bottom: 40px;
