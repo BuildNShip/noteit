@@ -8,7 +8,7 @@ import "./Main.css";
 
 
 
-const Main = ({ activeNote, onUpdateNotes, onAddNote, toggleNavbar, isOpen, setIsOpen }) => {
+const Main = ({ activeNote, onUpdateNotes, onAddNote, toggleNavbar, isOpen}) => {
 
   const [textCase, setTextCase] = useState("titlecase");
   const [fontSize, setFontSize] = useState(14);

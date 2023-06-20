@@ -3,8 +3,14 @@
 import React, { useState } from 'react';
 import "./SidePanel.css"
 
+
+
 const SidePanel = ({ notes, onAddNote, onDeleteNote, activeNote, setActiveNote, toggleNavbar, isOpen, setIsOpen }) => {
   const sortedNotes = notes.sort((a, b) => b.lastModified - a.lastModified);
+  const handleDeleteNote = (noteId, event) => {
+    event.stopPropagation();
+    onDeleteNote(noteId);
+  };
   return (
     <div className='sidepanel'>
 
@@ -20,14 +26,15 @@ const SidePanel = ({ notes, onAddNote, onDeleteNote, activeNote, setActiveNote, 
               {sortedNotes.map((note) => (
                 <div
                   className={`app-sidebar-note ${note.id === activeNote && "active"}`}
-                  onClick={() => { setActiveNote(note.id); }}
+                  onClick={()=>{toggleNavbar();setActiveNote(note.id);}}
                 >
                   <div className="sidebar-note-title">
-                    <button class="note-title" onClick={toggleNavbar}>{note.title}</button>
+                    <button class="note-title" onClick={()=>{setActiveNote(note.id);}}>{note.title}</button>
                     <button
                       className="fa fa-trash "
-                      onClick={() => { onDeleteNote(note.id) }}
-                    ></button>
+                      onClick={
+                        // onDeleteNote(note.id);}}
+                         (event) => handleDeleteNote(note.id, event)}></button>
                   </div>
                   <small className="note-meta">
                     {" "}

@@ -80,6 +80,7 @@ const MainPage = () => {
                 activeNote={activeNote}
                 setActiveNote={setActiveNote}
             />}
+            
             {isMobile && <SidePanel
                 notes={notes}
                 onAddNote={onAddNote}
@@ -88,16 +89,15 @@ const MainPage = () => {
                 setActiveNote={setActiveNote}
                 toggleNavbar={toggleNavbar}
                 isOpen={isOpen}
-
-
+                setIsOpen={setIsOpen}
             />}
+
             <Main activeNote={getActiveNote()}
                 onUpdateNotes={onUpdateNotes}
                 onAddNote={onAddNote}
                 toggleNavbar={toggleNavbar}
                 isOpen={isOpen}
-
-                setIsOpen={setIsOpen} />
+            />
 
             <div className="footer">
                 <a href="https://buildnship.in/">
