@@ -33,13 +33,14 @@
 
 
 .no-active-note {
-    width: 70%;
+    width: 100%;
     height: 100vh;
     line-height: 100vh;
     text-align: center;
     color: #fcf1f19a;
-    background-color: #0c0c0cfd;
+    background-color: #000000fd;
 }
+
 
 /* Editing */
 .app-main-note-edit {
@@ -55,7 +56,7 @@
     background-color: #3b3a3a0d;
     color: #ddd;
     border-radius: 0px;
-   
+
     width: 60px;
     margin: 3px;
 
@@ -69,23 +70,24 @@
 }
 
 .btn-copy {
-    color:black;
-    font-weight:bolder ;
-    margin:3px 30px 3px 0px;
+    color: black;
+    font-weight: bolder;
+    margin: 3px 30px 3px 0px;
     border: none;
     border-radius: 0px 10px 10px 0px;
-    background-color:#f3cc41; 
+    background-color: #f3cc41;
 }
 
 #btn-drop {
-    color:black;
+    color: black;
     border: none;
-    font-weight:bolder ;
-    margin:3px 0px 3px 0px;
+    font-weight: bolder;
+    margin: 3px 0px 3px 0px;
     border-radius: 10px 0px 0px 10px;
-    background-color:#f3cc41; 
+    background-color: #f3cc41;
 
 }
+
 #btn-drop:hover {
     color: #928405;
 }
@@ -200,15 +202,29 @@ textarea {
 }
 
 @media only screen and (max-width: 900px) {
-   
+    .navbar-open .app-main {
+        background-color: #a83838;
+    }
+
     .app-main-header {
         margin-left: 14px;
         font-size: smaller;
     }
+
     .no-active-note {
-            width: 100%;
-            height: 94%;
-            position: relative;
+        width: 100%;
+        height: 95%;
+        position: relative;
+        background-color: #000;
+
+    }
+
+    .cnn {
+        margin-right: 200px;
+        margin-top: 0px;
+        font-size: 20px;
+        color: #f3cc41;
+
 
     }
 
@@ -223,20 +239,30 @@ textarea {
         justify-content: space-between;
         font-weight: lighter;
         background-color: #000;
+        color: #41f3db;
+
+    }
+
+    .fa {
+        color: #f3cc41;
 
     }
 
     .toggle-btn {
         display: block;
         padding: 14px;
+        color: #41f3db;
     }
+
     textarea {
         height: 70%;
         padding-left: 14px;
-        
+
     }
-    .main-edit-input{
+
+    .main-edit-input {
         padding-left: 14px;
+
     }
 
     .fontsize {
@@ -250,15 +276,17 @@ textarea {
     .btn-copy {
         margin-right: 14px;
     }
+
     .chars {
         margin-right: 14px;
-    
-    
+
+
     }
+
     .words {
         margin-left: 14px;
-    
-    
+
+
     }
 
 }
@@ -266,10 +294,11 @@ textarea {
 @media only screen and (max-width: 400px) {
     textarea {
         height: 65%;
-       
+
     }
+
     .no-active-note {
-        width:600px;
+        width: 600px;
     }
 
 }

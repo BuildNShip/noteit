@@ -3,10 +3,10 @@ import "./Sidebar.css"
 const Sidebar = ({ notes, onAddNote, onDeleteNote, activeNote, setActiveNote }) => {
   const sortedNotes = notes.sort((a, b) => b.lastModified - a.lastModified);
   return (
-      <div className="app-sidebar">
+    <div className="app-sidebar">
       <div className="app-sidebar-header">
         <h2 className="app-logo">NOTEit</h2>
-       <button className="fa fa-plus" onClick={onAddNote}></button>
+        <button className="fa fa-plus" onClick={onAddNote}></button>
       </div>
       <div className="app-sidebar-notes">
         {sortedNotes.map((note) => (
@@ -15,7 +15,7 @@ const Sidebar = ({ notes, onAddNote, onDeleteNote, activeNote, setActiveNote }) 
             onClick={() => setActiveNote(note.id)}
           >
             <div className="sidebar-note-title">
-              {note.title}
+              <span className="note-main-title"> {note.title}</span>
               <button
                 className="fa fa-trash "
                 onClick={() => onDeleteNote(note.id)}

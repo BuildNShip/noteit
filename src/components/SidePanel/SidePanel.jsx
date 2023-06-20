@@ -13,7 +13,7 @@ const SidePanel = ({ notes, onAddNote, onDeleteNote, activeNote, setActiveNote, 
           <nav className="navbar-items">
             <div className="app-sidebar-header">
               <h2 className="app-logo pt-3">NOTEit</h2>
-              <button className="fa fa-plus" onClick={onAddNote}></button>
+              <button className="fa fa-plus" onClick={() => { onAddNote(); toggleNavbar(); }}></button>
               {/* <button class="fa fa-times" aria-hidden="true" onClick={toggleNavbar}></button> */}
             </div>
             <div className="app-sidebar-notes">
@@ -23,10 +23,10 @@ const SidePanel = ({ notes, onAddNote, onDeleteNote, activeNote, setActiveNote, 
                   onClick={() => { setActiveNote(note.id); }}
                 >
                   <div className="sidebar-note-title">
-                   <button class="note-title" onClick={toggleNavbar}>{note.title}</button>
+                    <button class="note-title" onClick={toggleNavbar}>{note.title}</button>
                     <button
                       className="fa fa-trash "
-                      onClick={() => {onDeleteNote(note.id)}}
+                      onClick={() => { onDeleteNote(note.id) }}
                     ></button>
                   </div>
                   <small className="note-meta">
@@ -40,7 +40,6 @@ const SidePanel = ({ notes, onAddNote, onDeleteNote, activeNote, setActiveNote, 
                       hour12: true,
                     })}
                   </small>
-
                 </div>
               ))}
             </div>

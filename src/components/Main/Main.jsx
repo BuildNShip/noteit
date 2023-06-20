@@ -6,7 +6,10 @@ import { useRef } from "react";
 import SidePanel from "../SidePanel/SidePanel";
 import "./Main.css";
 
-const Main = ({ activeNote, onUpdateNotes ,onAddNote ,toggleNavbar, isOpen}) => {
+
+
+const Main = ({ activeNote, onUpdateNotes, onAddNote, toggleNavbar, isOpen, setIsOpen }) => {
+
   const [textCase, setTextCase] = useState("titlecase");
   const [fontSize, setFontSize] = useState(14);
   const [copyStatus, setCopyStatus] = useState("copy");
@@ -70,10 +73,20 @@ const Main = ({ activeNote, onUpdateNotes ,onAddNote ,toggleNavbar, isOpen}) => 
         lastModified: Date.now(),
       });
     }
-    
+
   };
 
-  if (!activeNote) return <div className="no-active-note">No Selected Notes </div> ;
+  if (!activeNote) return (<div className="app-main">
+    {isMobile && (<div className="toggle-btn ">
+      <button className={`navbar-toggle ${isOpen ? 'open' : ''}`} onClick={toggleNavbar}>
+        <h1><i class="fa fa-bars" aria-hidden="true"></i></h1>
+      </button>
+      <button className="add-btn fa fa-plus" onClick={onAddNote}></button>
+    </div>)}
+    <div className="no-active-note text-white">
+      <p className="cnn">Create New Note </p>
+    </div>
+  </div>);
   return (
     <div className="app-main">
       <div className="app-main-note-edit">
@@ -81,11 +94,12 @@ const Main = ({ activeNote, onUpdateNotes ,onAddNote ,toggleNavbar, isOpen}) => 
           <button className={`navbar-toggle ${isOpen ? 'open' : ''}`} onClick={toggleNavbar}>
             <h1><i class="fa fa-bars" aria-hidden="true"></i></h1>
           </button>
-          <button className="add-btn fa fa-plus" onClick={onAddNote}></button> 
+          <button className="add-btn fa fa-plus" onClick={onAddNote}></button>
         </div>)}
+
         <input
           type="text"
-          className="main-edit-input"
+          className={`main-edit-input ${isOpen ? 'navbar-open' : ''}`}
           id="title"
           value={activeNote.title}
           onChange={(e) =>
@@ -98,7 +112,7 @@ const Main = ({ activeNote, onUpdateNotes ,onAddNote ,toggleNavbar, isOpen}) => 
           }
           autoFocus
         />
-        <div className="app-main-header">
+        <div className={`app-main-header ${isOpen ? 'navbar-open' : ''}`}>
           {/*  toolbar --------------------------------------- */}
           <input
             className="fontsize"
@@ -109,7 +123,7 @@ const Main = ({ activeNote, onUpdateNotes ,onAddNote ,toggleNavbar, isOpen}) => 
 
           {/* dropdown menu-------------------------------------- */}
           <Dropdown as={ButtonGroup} id="drop-dwn">
-          <Dropdown.Toggle split variant="" value="fxb" className="btn-drop" id="btn-drop">{textCase}</Dropdown.Toggle>
+            <Dropdown.Toggle split variant="" value="fxb" className="btn-drop" id="btn-drop">{textCase}</Dropdown.Toggle>
             <Dropdown.Menu id="menu-drop">
               <Dropdown.Item
                 id="menu-item" value="none" text="none"
@@ -142,15 +156,17 @@ const Main = ({ activeNote, onUpdateNotes ,onAddNote ,toggleNavbar, isOpen}) => 
                 Title
               </Dropdown.Item>
             </Dropdown.Menu>
-          
+
           </Dropdown>
           <button className="btn-copy btn-white" onClick={handleCopy}>
             {copyStatus}
           </button>
         </div>
 
+        {/* <div className={`txt-area ${isNavbarOpen ? 'navbar-open' : ''}`}> */}
         <textarea
           id="body"
+          className={`txt  ${isOpen ? 'navbar-open' : ''}`}
           ref={content}
           placeholder="write your note here......"
           style={{
@@ -160,7 +176,7 @@ const Main = ({ activeNote, onUpdateNotes ,onAddNote ,toggleNavbar, isOpen}) => 
 
           value={
             activeNote.textCase === "titlecase" ||
-            activeNote.textCase === "sentencecase"
+              activeNote.textCase === "sentencecase"
               ? toTitleCase(activeNote.body)
               : activeNote.body
           }
@@ -173,18 +189,17 @@ const Main = ({ activeNote, onUpdateNotes ,onAddNote ,toggleNavbar, isOpen}) => 
               activeNote.textCase
             )
           }
-
-          
         />
-
-        <div className="textarea-footer">
+        <div className={`textarea-footer ${isOpen ? 'navbar-open' : ''}`}>
           <i className="words">
             words : {activeNote.body.trim().split(/\s+/).length}
           </i>
           <i className="chars">characters : {activeNote.body.length}</i>
         </div>
+        {/* </div> */}
       </div>
     </div>
+
   );
 }
 

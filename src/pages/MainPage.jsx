@@ -15,17 +15,20 @@ const MainPage = () => {
     const [notes, setNotes] = useState(
         localStorage.notes ? JSON.parse(localStorage.notes) : []
     );
-    
+
     const latestModifiedNote = notes.length > 0 ? notes[0] : null;
+
     const [activeNote, setActiveNote] = useState(latestModifiedNote ? latestModifiedNote.id : false);
     useEffect(() => {
         localStorage.setItem("notes", JSON.stringify(notes));
     }, [notes]);
 
-    const [isOpen, setIsOpen] = useState(true);
+    const [isOpen, setIsOpen] = useState(false);
+
 
     const toggleNavbar = () => {
-      setIsOpen(!isOpen);
+        setIsOpen(!isOpen);
+
     };
 
     const onAddNote = () => {
@@ -40,7 +43,7 @@ const MainPage = () => {
 
         setNotes([newNote, ...notes]);
         setActiveNote(newNote.id);
-        
+
     };
 
     const onDeleteNote = (idToDelete) => {
@@ -85,15 +88,16 @@ const MainPage = () => {
                 setActiveNote={setActiveNote}
                 toggleNavbar={toggleNavbar}
                 isOpen={isOpen}
-                
+
 
             />}
             <Main activeNote={getActiveNote()}
-             onUpdateNotes={onUpdateNotes} 
-             onAddNote={onAddNote}
-             toggleNavbar={toggleNavbar}
-             isOpen={isOpen} 
-             setIsOpen={setIsOpen}/>
+                onUpdateNotes={onUpdateNotes}
+                onAddNote={onAddNote}
+                toggleNavbar={toggleNavbar}
+                isOpen={isOpen}
+
+                setIsOpen={setIsOpen} />
 
             <div className="footer">
                 <a href="https://buildnship.in/">
