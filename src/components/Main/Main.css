@@ -56,7 +56,7 @@
     background-color: #3b3a3a0d;
     color: #ddd;
     border-radius: 0px;
-
+   
     width: 60px;
     margin: 3px;
 
@@ -70,24 +70,23 @@
 }
 
 .btn-copy {
-    color: black;
-    font-weight: bolder;
-    margin: 3px 30px 3px 0px;
+    color:black;
+    font-weight:bolder ;
+    margin:3px 30px 3px 0px;
     border: none;
     border-radius: 0px 10px 10px 0px;
-    background-color: #f3cc41;
+    background-color:#f3cc41; 
 }
 
 #btn-drop {
-    color: black;
+    color:black;
     border: none;
-    font-weight: bolder;
-    margin: 3px 0px 3px 0px;
+    font-weight:bolder ;
+    margin:3px 0px 3px 0px;
     border-radius: 10px 0px 0px 10px;
-    background-color: #f3cc41;
+    background-color:#f3cc41; 
 
 }
-
 #btn-drop:hover {
     color: #928405;
 }
@@ -204,34 +203,32 @@ textarea {
 @media only screen and (max-width: 900px) {
     .navbar-open .app-main {
         background-color: #a83838;
-    }
-
+      }
+   
     .app-main-header {
         margin-left: 14px;
         font-size: smaller;
     }
-
     .no-active-note {
-        width: 100%;
-        height: 95%;
-        position: relative;
-        background-color: #000;
+            width: 100%;
+            height: 95%;
+            position: relative;
+            background-color: #000;
 
     }
-
-    .cnn {
+    .cnn{
         margin-right: 200px;
         margin-top: 0px;
         font-size: 20px;
-        color: #f3cc41;
-
-
+        color:#f3cc41;
+        
+        
     }
-
     .add-btn {
         font-style: normal;
         height: 25%;
         padding-left: 82%;
+        margin-right:14px;
         font-size: 15px;
         font-size: 15px;
         display: flexbox;
@@ -242,7 +239,6 @@ textarea {
         color: #41f3db;
 
     }
-
     .fa {
         color: #f3cc41;
 
@@ -253,16 +249,14 @@ textarea {
         padding: 14px;
         color: #41f3db;
     }
-
     textarea {
         height: 70%;
         padding-left: 14px;
-
+        
     }
-
-    .main-edit-input {
+    .main-edit-input{
         padding-left: 14px;
-
+        
     }
 
     .fontsize {
@@ -276,17 +270,15 @@ textarea {
     .btn-copy {
         margin-right: 14px;
     }
-
     .chars {
         margin-right: 14px;
-
-
+    
+    
     }
-
     .words {
         margin-left: 14px;
-
-
+    
+    
     }
 
 }
@@ -294,16 +286,30 @@ textarea {
 @media only screen and (max-width: 400px) {
     textarea {
         height: 65%;
-
+       
     }
-
     .no-active-note {
-        width: 600px;
+        width:600px;
     }
+    .add-btn{
+        padding-left: 80%;
+        margin-right: 0px;
+    }
+    .textarea-footer{
+        margin-bottom: 80px;
+    }
+    
 
 }
 
 @media (max-width:720px) {
+    .textarea-footer {
+        margin-bottom: 40px;
+        padding-bottom: 40px;
+    }
+}
+
+@media (min-width:400px) {
     .textarea-footer {
         margin-bottom: 40px;
         padding-bottom: 40px;
