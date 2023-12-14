@@ -7,13 +7,12 @@
 
 body,
 .App {
-
   width: 100%;
   height: 100vh;
   overflow: hidden;
   /* background: url(https://www.toptal.com/designers/subtlepatterns/patterns/lightpaperfibers.png); */
   background-color: #000000f5;
-  font-family: "Manrope", sans-serif;
+  font-family: "Rethink Sans", sans-serif;
   font-feature-settings: "kern";
 }
 
@@ -45,10 +44,6 @@ button:hover {
   color: #f3cc41;
   font-size: 1.55rem;
   font-weight: 600;
-  width: 100px;
-  height: 60%;
-  margin-left: 30px;
-
 }
 
 ::-webkit-scrollbar {
@@ -71,17 +66,11 @@ button:hover {
   background: #ebe0b9;
 }
 
-
-
-
-
 @media only screen and (max-width: 400px) {
-
   .navbar-open {
     filter: blur(4px);
     /* Apply blur effect */
     opacity: 0.5;
     /* Make it transparent */
   }
-
 }
