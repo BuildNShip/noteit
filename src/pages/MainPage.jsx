@@ -1,4 +1,4 @@
-import React from 'react'
+import React from "react";
 import { useState, useEffect } from "react";
 import "./MainPage.css";
 import uuid from "react-uuid";
@@ -10,116 +10,114 @@ import BuildNShip from "../assets/BuildNShip.png";
 import Main from "../components/Main/Main";
 import SidePanel from "../components/SidePanel/SidePanel";
 
-
 const MainPage = () => {
-    const [notes, setNotes] = useState(
-        localStorage.notes ? JSON.parse(localStorage.notes) : []
-    );
+  const [notes, setNotes] = useState(
+    localStorage.notes ? JSON.parse(localStorage.notes) : []
+  );
 
-    const latestModifiedNote = notes.length > 0 ? notes[0] : null;
+  const latestModifiedNote = notes.length > 0 ? notes[0] : null;
 
-    const [activeNote, setActiveNote] = useState(latestModifiedNote ? latestModifiedNote.id : false);
-    useEffect(() => {
-        localStorage.setItem("notes", JSON.stringify(notes));
-    }, [notes]);
+  const [activeNote, setActiveNote] = useState(
+    latestModifiedNote ? latestModifiedNote.id : false
+  );
+  useEffect(() => {
+    localStorage.setItem("notes", JSON.stringify(notes));
+  }, [notes]);
 
-    const [isOpen, setIsOpen] = useState(false);
+  const [isOpen, setIsOpen] = useState(false);
 
+  const toggleNavbar = () => {
+    setIsOpen(!isOpen);
+  };
 
-    const toggleNavbar = () => {
-        setIsOpen(!isOpen);
-
+  const onAddNote = () => {
+    const newNote = {
+      id: uuid(),
+      title: "Untitled note",
+      body: "Write your note here",
+      lastModified: Date.now(),
+      fontSize: 14,
+      textCase: "",
     };
 
-    const onAddNote = () => {
-        const newNote = {
-            id: uuid(),
-            title: "Untitled note",
-            body: "Write your note here",
-            lastModified: Date.now(),
-            fontSize: 14,
-            textCase: ''
-        };
+    setNotes([newNote, ...notes]);
+    setActiveNote(newNote.id);
+  };
 
-        setNotes([newNote, ...notes]);
-        setActiveNote(newNote.id);
+  const onDeleteNote = (idToDelete) => {
+    setNotes(notes.filter((note) => note.id !== idToDelete));
+  };
 
-    };
+  const getActiveNote = () => {
+    return notes.find((note) => note.id === activeNote);
+  };
 
-    const onDeleteNote = (idToDelete) => {
-        setNotes(notes.filter((note) => note.id !== idToDelete));
+  const onUpdateNotes = (updatedNote) => {
+    const updatedNotes = notes.map((note) => {
+      if (note.id === activeNote) {
+        return updatedNote;
+      }
+      return note;
+    });
+    setNotes(updatedNotes);
+  };
 
-    };
+  const isMobile = window.innerWidth <= 900;
 
-    const getActiveNote = () => {
-        return notes.find((note) => note.id === activeNote);
+  return (
+    <div className="App">
+      {!isMobile && (
+        <Sidebar
+          notes={notes}
+          onAddNote={onAddNote}
+          onDeleteNote={onDeleteNote}
+          activeNote={activeNote}
+          setActiveNote={setActiveNote}
+        />
+      )}
 
+      {isMobile && (
+        <SidePanel
+          notes={notes}
+          onAddNote={onAddNote}
+          onDeleteNote={onDeleteNote}
+          activeNote={activeNote}
+          setActiveNote={setActiveNote}
+          toggleNavbar={toggleNavbar}
+          isOpen={isOpen}
+          setIsOpen={setIsOpen}
+        />
+      )}
 
-    };
+      <Main
+        activeNote={getActiveNote()}
+        onUpdateNotes={onUpdateNotes}
+        onAddNote={onAddNote}
+        toggleNavbar={toggleNavbar}
+        isOpen={isOpen}
+      />
 
-    const onUpdateNotes = (updatedNote) => {
-        const updatedNotes = notes.map((note) => {
-            if (note.id === activeNote) {
-                return updatedNote;
-            }
-            return note;
-        });
-        setNotes(updatedNotes);
-    };
-
-    const isMobile = window.innerWidth <= 900;
-
-
-
-    return (
-        <div className="App">
-            {!isMobile && <Sidebar
-                notes={notes}
-                onAddNote={onAddNote}
-                onDeleteNote={onDeleteNote}
-                activeNote={activeNote}
-                setActiveNote={setActiveNote}
-            />}
-            
-            {isMobile && <SidePanel
-                notes={notes}
-                onAddNote={onAddNote}
-                onDeleteNote={onDeleteNote}
-                activeNote={activeNote}
-                setActiveNote={setActiveNote}
-                toggleNavbar={toggleNavbar}
-                isOpen={isOpen}
-                setIsOpen={setIsOpen}
-            />}
-
-            <Main activeNote={getActiveNote()}
-                onUpdateNotes={onUpdateNotes}
-                onAddNote={onAddNote}
-                toggleNavbar={toggleNavbar}
-                isOpen={isOpen}
-            />
-
-            <div className="footer">
-                <a href="https://buildnship.in/">
-                    <img src={BuildNShip} alt="logo" />
-                </a>
-                <div className={styles.social_container}>
-                    <a href="https://twitter.com/buildnship/">
-                        <FaTwitter size={25} color="white" />
-                    </a>
-                    <a href="https://instagram.com/buildnship?igshid=YmMyMTA2M2Y=">
-                        <FaInstagram size={25} color="white" />
-                    </a>
-                    <a href="https://github.com/BuildNShip">
-                        <FaGithub size={25} color="white" />
-                    </a>
-                    <a href="https://t.me/buildnship">
-                        <FaTelegram size={25} color="white" />
-                    </a>
-                </div>
-            </div>
+      <div className="footer">
+        <a href="https://buildnship.in/">
+          <img src={BuildNShip} alt="logo" />
+        </a>
+        <div className="social_container">
+          <a href="https://twitter.com/buildnship/">
+            <FaTwitter size={25} color="white" />
+          </a>
+          <a href="https://instagram.com/buildnship?igshid=YmMyMTA2M2Y=">
+            <FaInstagram size={25} color="white" />
+          </a>
+          <a href="https://github.com/BuildNShip">
+            <FaGithub size={25} color="white" />
+          </a>
+          <a href="https://t.me/buildnship">
+            <FaTelegram size={25} color="white" />
+          </a>
         </div>
-    );
-}
+      </div>
+    </div>
+  );
+};
 
-export default MainPage
+export default MainPage;

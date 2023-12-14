@@ -18,30 +18,31 @@
 .footer a img {
   width: 100px;
   height: 60%;
+  margin-left: 40px;
 }
 
 .social_container {
-  color: white;
+  width: max-content;
+  height: 100%;
+  display: flex;
+  flex-direction: row;
+  gap: 15px;
+  margin-right: 20px;
 }
 
 .footer .social_container a {
   height: 100%;
+  width: max-content;
+  color: white;
   display: flex;
   align-items: center;
 }
 
-svg {
-  width: 38px;
-  height: 38px;
-}
-
-@media only screen and (max-width: 900px) {
-  svg {
-    width: 30px;
-    height: 30px;
+@media only screen and (max-width: 600px) {
+  .footer a img {
+    margin-left: 14px;
   }
-
-  .social_container {
-    color: white;
+  .footer .social_container {
+    gap: 8px;
   }
 }
