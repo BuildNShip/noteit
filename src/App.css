@@ -41,9 +41,10 @@ button:hover {
 .app-logo {
   color: #f3cc41;
   font-size: 1.55rem;
-  font-weight: 600;
+  font-weight: 700;
   width: 100px;
-  height: 60%;
+  margin: 0;
+  padding: 0;
 }
 
 ::-webkit-scrollbar {

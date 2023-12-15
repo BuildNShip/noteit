@@ -13,7 +13,7 @@
   height: 45px;
   font-style: normal;
   font-size: 15px;
-  display: flexbox;
+
   display: flex;
   justify-content: space-between;
   font-weight: lighter;
@@ -22,7 +22,7 @@
 
 .app-main-header {
   display: flex;
-  display: flexbox;
+  padding: 0.5rem 1rem;
   justify-content: right;
   color: #ddd;
 }
@@ -45,28 +45,30 @@
 }
 
 .fontsize {
-  background-color: #3b3a3a0d;
+  background-color: #7171710d;
   color: #ddd;
-  border-radius: 0px;
-
-  width: 60px;
+  border: none;
+  border-radius: 8px 0px 0px 8px;
+  padding: 0.5rem 1rem;
 }
 
 .btn-copy {
   color: black;
+  border-radius: 0px 8px 8px 0px;
+  padding-right: 0.75rem;
   font-weight: bolder;
   border: none;
-  border-radius: 0px 10px 10px 0px;
   background-color: #f3cc41;
 }
 
 #btn-drop {
   color: black;
   border: none;
+  border-radius: 0px;
   font-weight: bolder;
-  border-radius: 10px 0px 0px 10px;
   background-color: #f3cc41;
 }
+
 #btn-drop:hover {
   color: #928405;
 }
@@ -95,6 +97,8 @@
   color: #ffffff70;
   text-decoration: none;
   text-transform: none;
+
+  padding: 1rem 2rem;
 }
 
 #title {
@@ -110,7 +114,7 @@ textarea {
   resize: none;
   font-size: 16;
   background-color: #000;
-  height: 74%;
+  height: 80%;
   position: relative;
   will-change: transform;
   overflow: auto;
@@ -128,9 +132,8 @@ textarea {
   /* border-top: 0.5px solid #ffffff2d; */
   color: #ffffff70;
   font-style: normal;
-  height: 25%;
   font-size: 15px;
-  display: flexbox;
+
   display: flex;
   justify-content: space-between;
   font-weight: lighter;
@@ -139,6 +142,7 @@ textarea {
 
 .words {
   font-style: normal;
+  margin: 2rem;
 }
 
 /* screen size adaption need to be done */
@@ -188,7 +192,6 @@ textarea {
     height: 25%;
     font-size: 15px;
     font-size: 15px;
-    display: flexbox;
 
     justify-content: space-between;
     font-weight: lighter;
@@ -220,4 +223,3 @@ textarea {
     width: 600px;
   }
 }
-

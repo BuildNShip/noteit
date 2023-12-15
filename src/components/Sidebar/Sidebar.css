@@ -6,10 +6,10 @@
 
 .app-sidebar-header {
   display: flex;
-  display: flexbox;
   justify-content: space-between;
   background-color: #000;
   border-bottom: 0.5px solid #dddddd4d;
+  padding: 2rem;
 }
 
 .app-sidebar-notes {
@@ -22,6 +22,7 @@
   cursor: pointer;
   background-color: #000;
   border-bottom: 0.5px solid #ffffff2d;
+  padding: 0.75rem 2rem;
 }
 
 .fa-plus {

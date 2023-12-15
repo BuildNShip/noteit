@@ -1,37 +1,33 @@
 .app-sidebar {
-    width: 600px;
+  width: 600px;
 }
 
 .navbar-items {
-    width: 17rem;
+  width: 17rem;
 }
 
 .navbar-toggle {
-    transition: all 0.3s ease;
-    /* Transition with slower ease */
-}
-
-i {
-    height: 60px;
+  transition: all 0.3s ease;
+  /* Transition with slower ease */
 }
 
 @media only screen and (max-width: 900px) {
-    .sidepanel {
-        border-right: 0.5px solid #ffffff2d;
-    }
+  .sidepanel {
+    border-right: 0.5px solid #ffffff2d;
+  }
 
-    .app-sidebar {
-        width: 900px;
-    }
+  .app-sidebar {
+    width: 900px;
+  }
 }
 
 @media only screen and (max-width: 300px) {
-    .sidepanel {
-        border-right: 0.5px solid #ffffff2d;
-        width: 200px;
-    }
+  .sidepanel {
+    border-right: 0.5px solid #ffffff2d;
+    width: 200px;
+  }
 
-    .app-sidebar-notes {
-        width: 200px;
-    }
+  .app-sidebar-notes {
+    width: 200px;
+  }
 }

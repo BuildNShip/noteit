@@ -1,15 +1,18 @@
 import ButtonGroup from "react-bootstrap/ButtonGroup";
-import DropdownButton from 'react-bootstrap/DropdownButton';
+import DropdownButton from "react-bootstrap/DropdownButton";
 import Dropdown from "react-bootstrap/Dropdown";
 import React, { useState, useEffect } from "react";
 import { useRef } from "react";
 import SidePanel from "../SidePanel/SidePanel";
 import "./Main.css";
 
-
-
-const Main = ({ activeNote, onUpdateNotes, onAddNote, toggleNavbar, isOpen}) => {
-
+const Main = ({
+  activeNote,
+  onUpdateNotes,
+  onAddNote,
+  toggleNavbar,
+  isOpen,
+}) => {
   const [textCase, setTextCase] = useState("titlecase");
   const [fontSize, setFontSize] = useState(14);
   const [copyStatus, setCopyStatus] = useState("copy");
@@ -64,7 +67,7 @@ const Main = ({ activeNote, onUpdateNotes, onAddNote, toggleNavbar, isOpen}) => 
         textCase: caseType,
         lastModified: Date.now(),
       });
-      setTextCase('titlecase');
+      setTextCase("titlecase");
     } else {
       setTextCase(caseType);
       onUpdateNotes({
@@ -73,33 +76,49 @@ const Main = ({ activeNote, onUpdateNotes, onAddNote, toggleNavbar, isOpen}) => 
         lastModified: Date.now(),
       });
     }
-
   };
 
-  if (!activeNote) return (<div className="app-main">
-    {isMobile && (<div className="toggle-btn ">
-      <button className={`navbar-toggle ${isOpen ? 'open' : ''}`} onClick={toggleNavbar}>
-        <h1><i class="fa fa-bars" aria-hidden="true"></i></h1>
-      </button>
-      <button className="add-btn fa fa-plus" onClick={onAddNote}></button>
-    </div>)}
-    <div className="no-active-note text-white">
-      <p className="cnn">Create New Note </p>
-    </div>
-  </div>);
+  if (!activeNote)
+    return (
+      <div className="app-main">
+        {isMobile && (
+          <div className="toggle-btn ">
+            <button
+              className={`navbar-toggle ${isOpen ? "open" : ""}`}
+              onClick={toggleNavbar}
+            >
+              <h1>
+                <i class="fa fa-bars" aria-hidden="true"></i>
+              </h1>
+            </button>
+            <button className="add-btn fa fa-plus" onClick={onAddNote}></button>
+          </div>
+        )}
+        <div className="no-active-note text-white">
+          <p className="cnn">Create New Note </p>
+        </div>
+      </div>
+    );
   return (
     <div className="app-main">
       <div className="app-main-note-edit">
-        {isMobile && (<div className="toggle-btn ">
-          <button className={`navbar-toggle ${isOpen ? 'open' : ''}`} onClick={toggleNavbar}>
-            <h1><i class="fa fa-bars" aria-hidden="true"></i></h1>
-          </button>
-          <button className="add-btn fa fa-plus" onClick={onAddNote}></button>
-        </div>)}
+        {isMobile && (
+          <div className="toggle-btn ">
+            <button
+              className={`navbar-toggle ${isOpen ? "open" : ""}`}
+              onClick={toggleNavbar}
+            >
+              <h1>
+                <i class="fa fa-bars" aria-hidden="true"></i>
+              </h1>
+            </button>
+            <button className="add-btn fa fa-plus" onClick={onAddNote}></button>
+          </div>
+        )}
 
         <input
           type="text"
-          className={`main-edit-input ${isOpen ? 'navbar-open' : ''}`}
+          className={`main-edit-input ${isOpen ? "navbar-open" : ""}`}
           id="title"
           value={activeNote.title}
           onChange={(e) =>
@@ -112,7 +131,7 @@ const Main = ({ activeNote, onUpdateNotes, onAddNote, toggleNavbar, isOpen}) => 
           }
           autoFocus
         />
-        <div className={`app-main-header ${isOpen ? 'navbar-open' : ''}`}>
+        <div className={`app-main-header ${isOpen ? "navbar-open" : ""}`}>
           {/*  toolbar --------------------------------------- */}
           <input
             className="fontsize"
@@ -123,40 +142,53 @@ const Main = ({ activeNote, onUpdateNotes, onAddNote, toggleNavbar, isOpen}) => 
 
           {/* dropdown menu-------------------------------------- */}
           <Dropdown as={ButtonGroup} id="drop-dwn">
-            <Dropdown.Toggle split variant="" value="fxb" className="btn-drop" id="btn-drop">{textCase}</Dropdown.Toggle>
+            <Dropdown.Toggle
+              split
+              variant=""
+              value="fxb"
+              className="btn-drop"
+              id="btn-drop"
+            >
+              {textCase}
+            </Dropdown.Toggle>
             <Dropdown.Menu id="menu-drop">
               <Dropdown.Item
-                id="menu-item" value="none" text="none"
+                id="menu-item"
+                value="none"
+                text="none"
                 onClick={() => handleTextCaseChange("none")}
               >
                 None
               </Dropdown.Item>
               <Dropdown.Item
-                id="menu-item" value="upper"
+                id="menu-item"
+                value="upper"
                 onClick={() => handleTextCaseChange("uppercase")}
               >
                 Upper
               </Dropdown.Item>
               <Dropdown.Item
-                id="menu-item" value="lower"
+                id="menu-item"
+                value="lower"
                 onClick={() => handleTextCaseChange("lowercase")}
               >
                 Lower
               </Dropdown.Item>
               <Dropdown.Item
-                id="menu-item" value="capitalize"
+                id="menu-item"
+                value="capitalize"
                 onClick={() => handleTextCaseChange("capitalize")}
               >
                 Capital
               </Dropdown.Item>
               <Dropdown.Item
-                id="menu-item" value="title"
+                id="menu-item"
+                value="title"
                 onClick={() => handleTextCaseChange("titlecase")}
               >
                 Title
               </Dropdown.Item>
             </Dropdown.Menu>
-
           </Dropdown>
           <button className="btn-copy btn-white" onClick={handleCopy}>
             {copyStatus}
@@ -166,21 +198,20 @@ const Main = ({ activeNote, onUpdateNotes, onAddNote, toggleNavbar, isOpen}) => 
         {/* <div className={`txt-area ${isNavbarOpen ? 'navbar-open' : ''}`}> */}
         <textarea
           id="body"
-          className={`txt  ${isOpen ? 'navbar-open' : ''}`}
+          className={`txt  ${isOpen ? "navbar-open" : ""}`}
           ref={content}
           placeholder="write your note here......"
           style={{
             fontSize: `${activeNote.fontSize}px`,
             textTransform: `${activeNote.textCase}`,
+            padding: "2rem",
           }}
-
           value={
             activeNote.textCase === "titlecase" ||
-              activeNote.textCase === "sentencecase"
+            activeNote.textCase === "sentencecase"
               ? toTitleCase(activeNote.body)
               : activeNote.body
           }
-
           onChange={(e) =>
             onEditField(
               "body",
@@ -190,7 +221,7 @@ const Main = ({ activeNote, onUpdateNotes, onAddNote, toggleNavbar, isOpen}) => 
             )
           }
         />
-        <div className={`textarea-footer ${isOpen ? 'navbar-open' : ''}`}>
+        <div className={`textarea-footer ${isOpen ? "navbar-open" : ""}`}>
           <i className="words">
             words : {activeNote.body.trim().split(/\s+/).length}
           </i>
@@ -199,8 +230,7 @@ const Main = ({ activeNote, onUpdateNotes, onAddNote, toggleNavbar, isOpen}) => 
         {/* </div> */}
       </div>
     </div>
-
   );
-}
+};
 
-export default Main
+export default Main;

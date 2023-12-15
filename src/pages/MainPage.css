@@ -44,6 +44,8 @@ button:hover {
   color: #f3cc41;
   font-size: 1.55rem;
   font-weight: 600;
+  margin: 0;
+  padding: 0;
 }
 
 ::-webkit-scrollbar {
